@@ -90,18 +90,22 @@ class SubscriberViewModel(private val subscriberRepository: SubscriberRepository
 
     fun delete(subscriber: Subscriber) {
         viewModelScope.launch {
-            subscriberRepository.delete(subscriber)
+            val noOfRowsDeleted = subscriberRepository.delete(subscriber)
 
-            _statusMessage.value = Event("Subscriber deleted..!!")
+            if (noOfRowsDeleted > 0) {
+                _statusMessage.value = Event("Subscriber deleted..!!")
 
-            inputEmail.value = null
-            inputName.value = null
+                inputEmail.value = null
+                inputName.value = null
 
-            showDeleteBtn = false
-            showUpdateBtn = false
+                showDeleteBtn = false
+                showUpdateBtn = false
 
-            btnSave.value = "Save"
-            btnClearAll.value = "Clear All"
+                btnSave.value = "Save"
+                btnClearAll.value = "Clear All"
+            } else {
+                _statusMessage.value = Event("Error deleting..!!")
+            }
 
         }
     }
