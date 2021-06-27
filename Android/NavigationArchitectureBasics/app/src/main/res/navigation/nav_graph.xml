@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.testapp.navigationarchitecturebasics.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_onboardingFragment"
+            app:destination="@id/onboardingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_TAndCFragment"
+            app:destination="@id/TAndCFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.testapp.navigationarchitecturebasics.WelcomeFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_welcome" >
+        <argument
+            android:name="inputText"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_secondFragment_to_TAndCFragment"
+            app:destination="@id/TAndCFragment" />
+        <argument
+            android:name="inputEmail"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.testapp.navigationarchitecturebasics.OnboardingFragment"
+        android:label="OnboardingFragment" >
+        <action
+            android:id="@+id/action_onboardingFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/TAndCFragment"
+        android:name="com.testapp.navigationarchitecturebasics.TAndCFragment"
+        android:label="fragment_t_and_c"
+        tools:layout="@layout/fragment_t_and_c" />
+</navigation>

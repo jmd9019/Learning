@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".presentation.HomeActivity">
+
+        <Button
+            android:id="@+id/movie_button"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            android:layout_weight="1.0"
+            android:background="@drawable/btn_rounded"
+            android:padding="15dp"
+            android:text="Movies"
+            android:textColor="@color/colorWhite"
+            android:textSize="50sp" />
+
+        <Button
+            android:id="@+id/tv_button"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            android:layout_weight="1.0"
+            android:background="@drawable/btn_rounded"
+            android:padding="15dp"
+            android:text="Tv Shows"
+            android:textColor="@color/colorWhite"
+            android:textSize="50sp" />
+
+        <Button
+            android:id="@+id/artists_button"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            android:layout_weight="1.0"
+            android:background="@drawable/btn_rounded"
+            android:padding="15dp"
+            android:text="Artists"
+            android:textColor="@color/colorWhite"
+            android:textSize="50sp" />
+
+    </LinearLayout>
+</layout>
